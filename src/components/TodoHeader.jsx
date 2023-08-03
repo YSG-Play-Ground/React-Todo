@@ -9,8 +9,10 @@ const Header = ({ tab, setTab }) => {
   return (
     <header
       className={cls(
-        "py-[10px] px-[10px] bg-[] w-full flex justify-between border-b",
-        darkMode ? "border-b-[white]" : "border-b-[black]"
+        "py-[1.4rem] px-[1rem] w-full flex justify-between border-b rounded-t-[1rem] font-[600] ",
+        darkMode
+          ? "border-b-[white] bg-[#1a1c35] text-[white]"
+          : "border-b-[#222] bg-[#fdfffd] text-[#222]"
       )}
     >
       <div>
@@ -19,6 +21,7 @@ const Header = ({ tab, setTab }) => {
             onClick={() => {
               toggleDarkmode();
               toast.warning("다크모드 Off");
+              localStorage.removeItem("theme", "dark");
             }}
           >
             {/* 다크 */}
@@ -28,7 +31,7 @@ const Header = ({ tab, setTab }) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 transform duration-200 hover:text-orange-300"
+              className="w-6 h-6 transform duration-200 hover:text-orange-400"
             >
               <path
                 strokeLinecap="round"
@@ -42,6 +45,7 @@ const Header = ({ tab, setTab }) => {
             onClick={() => {
               toggleDarkmode();
               toast.warning("다크모드 On");
+              localStorage.setItem("theme", "dark");
             }}
           >
             {/* 라이트 */}
@@ -51,7 +55,7 @@ const Header = ({ tab, setTab }) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 transform duration-200 hover:text-orange-300"
+              className="w-6 h-6 transform duration-200 hover:text-orange-400"
             >
               <path
                 strokeLinecap="round"
@@ -63,17 +67,17 @@ const Header = ({ tab, setTab }) => {
         )}
       </div>
 
-      <div className="flex space-x-[10px] text-[13px]">
+      <div className="flex space-x-[10px] text-[14px]">
         <p
           onClick={() => setTab("all")}
           className={cls(
             "cursor-pointer transform duration-200",
             !darkMode && tab === "all"
-              ? "text-orange-300 font-[600]  border-b-[2px] border-b-orange-300"
+              ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : "",
 
             darkMode && tab === "all"
-              ? "text-orange-300 font-[600]  border-b-[2px] border-b-orange-300"
+              ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : ""
           )}
         >
@@ -84,11 +88,11 @@ const Header = ({ tab, setTab }) => {
           className={cls(
             "cursor-pointer transform duration-200",
             !darkMode && tab === "active"
-              ? "text-orange-300 font-[600]  border-b-[2px] border-b-orange-300"
+              ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : "",
 
             darkMode && tab === "active"
-              ? "text-orange-300 font-[600]  border-b-[2px] border-b-orange-300"
+              ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : ""
           )}
         >
@@ -100,11 +104,11 @@ const Header = ({ tab, setTab }) => {
             "cursor-pointer transform duration-200",
 
             !darkMode && tab === "completed"
-              ? "text-orange-300 font-[600]  border-b-[2px] border-b-orange-300"
+              ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : "",
 
             darkMode && tab === "completed"
-              ? "text-orange-300 font-[600]  border-b-[2px] border-b-orange-300"
+              ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : ""
           )}
         >

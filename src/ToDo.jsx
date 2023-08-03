@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/TodoHeader";
 import TodoList from "./components/TodoList";
 import TodoCreate from "./components/TodoCreate";
@@ -6,11 +6,11 @@ import Layout from "./components/Layout";
 
 const ToDo = () => {
   const [tab, setTab] = useState("all"); // 탭상태값 'all', 'active', 'completed'
-  const [list, setList] = useState([
-    { id: 0, todo: "강의보기", checked: true },
-    { id: 1, todo: "카페가기", checked: false },
-    { id: 2, todo: "청소하기", checked: false },
-  ]);
+  const [list, setList] = useState(readTodoFromLocalStroage);
+
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
 
   return (
     <Layout>
@@ -27,3 +27,9 @@ export default ToDo;
 // TodoList   > 리스트
 // TodoCreate > 리스트 생성   / List에 겹치는 게 더 나을거같요
 // TodoCreate
+
+const readTodoFromLocalStroage = () => {
+  console.log("하하핳");
+  const list = localStorage.getItem("list");
+  return list ? JSON.parse(list) : [];
+};

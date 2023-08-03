@@ -69,50 +69,50 @@ const Header = ({ tab, setTab }) => {
 
       <div className="flex space-x-[10px] text-[14px]">
         <p
-          onClick={() => setTab("all")}
+          onClick={() => setTab("전체")}
           className={cls(
             "cursor-pointer transform duration-200",
-            !darkMode && tab === "all"
+            !darkMode && tab === "전체"
               ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : "",
 
-            darkMode && tab === "all"
+            darkMode && tab === "전체"
               ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : ""
           )}
         >
-          All
+          전체
         </p>
         <p
-          onClick={() => setTab("active")}
+          onClick={() => setTab("해야 할 일")}
           className={cls(
             "cursor-pointer transform duration-200",
-            !darkMode && tab === "active"
+            !darkMode && tab === "해야 할 일"
               ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : "",
 
-            darkMode && tab === "active"
+            darkMode && tab === "해야 할 일"
               ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : ""
           )}
         >
-          Active
+          해야 할 일
         </p>
         <p
-          onClick={() => setTab("completed")}
+          onClick={() => setTab("완료")}
           className={cls(
             "cursor-pointer transform duration-200",
 
-            !darkMode && tab === "completed"
+            !darkMode && tab === "완료"
               ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : "",
 
-            darkMode && tab === "completed"
+            darkMode && tab === "완료"
               ? "text-orange-400 font-[600]  border-b-[2px] border-b-orange-400"
               : ""
           )}
         >
-          Completed
+          완료
         </p>
       </div>
     </header>

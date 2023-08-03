@@ -17,6 +17,7 @@ npm run start
 ```
 
 개발서버 접근 URL : [http://localhost:3000](http://localhost:3000)
+배포서버 접근 URL : [https://whimsical-gecko-35424d.netlify.app/]
 
 - Build
 

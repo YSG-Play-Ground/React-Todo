@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <DarkModeProvider>
-      <ToastContainer autoClose={1000} className="w-[300px]" position={'bottom-center'} />
+      <ToastContainer autoClose={1000} className='w-[300px]' position={'bottom-center'} />
       <ToDo />
     </DarkModeProvider>
   </React.StrictMode>

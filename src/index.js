@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import ToDo from './ToDo';
 import reportWebVitals from './reportWebVitals';
+import { DarkModeProvider } from './context/DarkModeContext'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ToDo />
+    <DarkModeProvider>
+      <ToastContainer autoClose={1000} className="w-[300px]" position={'bottom-center'} />
+      <ToDo />
+    </DarkModeProvider>
   </React.StrictMode>
 );
 

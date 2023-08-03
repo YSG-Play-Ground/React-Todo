@@ -1,9 +1,13 @@
 import { cls } from "../libs/cls";
 import { toast } from "react-toastify";
+import { DarkModeContext } from "../context/DarkModeContext";
+import React, { useContext } from "react";
 
-const Header = ({ tab, setTab, darkMode, toggleDarkmode }) => {
+const Header = ({ tab, setTab }) => {
+  const { darkMode, toggleDarkmode } = useContext(DarkModeContext);
+
   return (
-    <div
+    <header
       className={cls(
         "py-[10px] px-[10px] bg-[] w-full flex justify-between border-b",
         darkMode ? "border-b-[white]" : "border-b-[black]"
@@ -107,7 +111,7 @@ const Header = ({ tab, setTab, darkMode, toggleDarkmode }) => {
           Completed
         </p>
       </div>
-    </div>
+    </header>
   );
 };
 

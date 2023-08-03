@@ -1,8 +1,10 @@
 import { cls } from "../libs/cls";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { toast } from "react-toastify";
+import { DarkModeContext } from "../context/DarkModeContext";
 
-const TodoCreate = ({ list, setList, darkMode }) => {
+const TodoCreate = ({ list, setList }) => {
+  const { darkMode } = useContext(DarkModeContext);
   const [todoName, setTodoName] = useState("");
   const onNameChange = (e) => {
     setTodoName(e.target.value);

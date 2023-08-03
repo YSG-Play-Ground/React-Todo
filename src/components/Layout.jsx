@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
   return (
     <section
       className={cls(
-        "w-full min-w-[400px] max-w-[500px] h-[60vh] m-auto relative border border-grey  rounded-[1rem] flex flex-col  shadow-[11px_12px_5px_-6px_rgba(0,0,0,0.48)]",
+        "w-full min-w-[400px] h-[60%] m-auto relative border border-grey  rounded-[1rem] flex flex-col  shadow-[11px_12px_5px_-6px_rgba(0,0,0,0.48)]",
         darkMode ? "bg-[#22243b] text-[white]" : "bg-[white] text-[#222]"
       )}
     >

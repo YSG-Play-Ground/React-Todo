@@ -73,8 +73,8 @@ const TodoList = ({ list, setList, tab }) => {
   };
 
   return (
-    <main className="w-full h-full relative">
-      <ul className="w-full h-full rounded-[1rem] overflow-auto relative p-[1rem]">
+    <main className="w-full h-[50vh] relative">
+      <ul className="w-full h-full rounded-[1rem] overflow-auto relative px-[1rem]">
         {filterList?.length === 0 ? (
           <div className="flex justify-center items-center m-auto h-full w-full space-x-[10px]">
             <div>
@@ -101,7 +101,7 @@ const TodoList = ({ list, setList, tab }) => {
               <li
                 key={idx}
                 className={cls(
-                  "list-none flex items-center justify-between w-full py-[7px]",
+                  "list-none flex flex-1 flex-auto items-center justify-between w-full py-[7px]",
                   item?.checked ? "line-through" : ""
                 )}
               >
@@ -154,7 +154,7 @@ const TodoList = ({ list, setList, tab }) => {
       {/*리스트 생성 */}
       <form
         className={cls(
-          "absolute bottom-[0%] w-full flex py-[1.4rem] px-[1rem] rounded-b-[1rem]",
+          "w-full flex py-[1.4rem] px-[1rem] absolute bottom-0  rounded-b-[1rem]",
           darkMode
             ? "border-t-[white] border bg-[#1a1c35] text-[white]"
             : "border-t-[#222] border bg-[#fdfffd] text-[#222]"
